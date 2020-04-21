@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MiniatureMadness.Data;
+using MiniatureMadness.Models;
 
 namespace MiniatureMadness
 {
@@ -40,6 +42,11 @@ namespace MiniatureMadness
             {
                 // Determines which connection string to use for the Identity DB.
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityDefault"));
+            });
+
+            services.AddDbContext<StoreDBContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
         }
 
