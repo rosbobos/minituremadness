@@ -35,8 +35,8 @@ namespace MiniatureMadness
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add MVC functionality to our app.
-            services.AddMvc();
+            // Add MVC / Razor Pages functionality to our app.
+            services.AddRazorPages();
 
             // Registers the ApplicationDbContext for Identity with our app.
             services.AddDbContext<ApplicationDbContext>(options => 
@@ -78,6 +78,9 @@ namespace MiniatureMadness
             // Defines the enpoints for our routes within the app.
             app.UseEndpoints(endpoints =>
             {
+                // Tells our app to route to Razor Pages first.
+                endpoints.MapRazorPages();
+
                 // Tells our app to use the Default Controller routing endpoints.
                 endpoints.MapDefaultControllerRoute();
             });
