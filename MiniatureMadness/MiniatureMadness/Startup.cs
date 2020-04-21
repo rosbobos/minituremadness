@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,10 +45,17 @@ namespace MiniatureMadness
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityDefault"));
             });
 
+            // Registers the StoreDBContext with our app.
             services.AddDbContext<StoreDBContext>(options =>
             {
+                // Determines which connection string to use for the store DB.
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            // Registers the Identity service within our app.
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>()
+                    .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,6 +71,9 @@ namespace MiniatureMadness
 
             // Tells our app to use native routing capabilities.
             app.UseRouting();
+
+            // Tells our app to use Identity Authentication.
+            app.UseAuthentication();
 
             // Defines the enpoints for our routes within the app.
             app.UseEndpoints(endpoints =>
