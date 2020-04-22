@@ -50,7 +50,7 @@ namespace MiniatureMadness.Pages.Account
             if (ModelState.IsValid)
             {
                 // Attempts to Sign In user with inputted data.
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, isPersistent: false, false);
+                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, isPersistent:false, false);
 
                 // Checks if user Sign In was successful.
                 if (result.Succeeded)
