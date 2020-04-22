@@ -18,7 +18,7 @@ namespace MiniatureMadness.Controllers
         {
             return View();
         }
-        [HttpGet]
+        /*[HttpGet]
         public async Task<ActionResult<IEnumerable<Products>>> GetPoroducts() => await _context.GetAllProducts();
 
         [HttpGet("{id}")]
@@ -53,6 +53,6 @@ namespace MiniatureMadness.Controllers
         public async Task DeleteProduct(int id)
         {
             await _context.DeleteProduct(id);
-        }
+        }*/
     }
 }
