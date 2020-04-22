@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using MiniatureMadness.Models
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,12 +14,25 @@
 
 <body>
     <header>
-        <p>Welcome User!</p>
-        <nav>
-            <a asp-controller="Home" asp-action="Index">Home</a>
-            <a asp-page="/Account/Login">Login</a>
-            <a asp-page="/Account/Register">Register</a>
-        </nav>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <span>Welcome @User.Claims.First(x => x.Type == "FullName").Value!</span>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <form asp-page="/Account/Logout">
+                    <button type="submit">Logout</button>
+                </form>
+            </nav>
+        }
+        else
+        {
+            <p>Welcome!</p>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-page="/Account/Login">Login</a>
+                <a asp-page="/Account/Register">Register</a>
+            </nav>
+        }
     </header>
 
     @RenderBody()
