@@ -1,62 +1,52 @@
 ﻿@page
 @model MiniatureMadness.Pages.Account.RegisterModel
 @{
-    Layout = null;
+    ViewData["Title"] = "Miniature Madness | Register";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
 
-<!DOCTYPE html>
+<h1>Register an account!</h1>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Miniature Madness | Register</title>
-</head>
+<section class="register-form">
+    <form method="post">
+        <div asp-validation-summary="All"></div>
 
-<body>
-    <h1>Register an account!</h1>
+        <div>
+            <p asp-validation-for="NewUser.Email"></p>
+            <label asp-for="NewUser.Email"></label>
+            <input asp-for="NewUser.Email" />
+        </div>
 
-    <section class="register-form">
-        <form method="post">
-            <div asp-validation-summary="All"></div>
+        <div>
+            <p asp-validation-for="NewUser.FirstName"></p>
+            <label asp-for="NewUser.FirstName"></label>
+            <input asp-for="NewUser.FirstName" />
+        </div>
 
-            <div>
-                <p asp-validation-for="NewUser.Email"></p>
-                <label asp-for="NewUser.Email"></label>
-                <input asp-for="NewUser.Email" />
-            </div>
+        <div>
+            <p asp-validation-for="NewUser.LastName"></p>
+            <label asp-for="NewUser.LastName"></label>
+            <input asp-for="NewUser.LastName" />
+        </div>
 
-            <div>
-                <p asp-validation-for="NewUser.FirstName"></p>
-                <label asp-for="NewUser.FirstName"></label>
-                <input asp-for="NewUser.FirstName" />
-            </div>
+        <div>
+            <p asp-validation-for="NewUser.Birthdate"></p>
+            <label asp-for="NewUser.Birthdate"></label>
+            <input asp-for="NewUser.Birthdate" />
+        </div>
 
-            <div>
-                <p asp-validation-for="NewUser.LastName"></p>
-                <label asp-for="NewUser.LastName"></label>
-                <input asp-for="NewUser.LastName" />
-            </div>
+        <div>
+            <p asp-validation-for="NewUser.Password"></p>
+            <label asp-for="NewUser.Password"></label>
+            <input asp-for="NewUser.Password" />
+        </div>
 
-            <div>
-                <p asp-validation-for="NewUser.Birthdate"></p>
-                <label asp-for="NewUser.Birthdate"></label>
-                <input asp-for="NewUser.Birthdate" />
-            </div>
+        <div>
+            <p asp-validation-for="NewUser.ConfirmPassword"></p>
+            <label asp-for="NewUser.ConfirmPassword"></label>
+            <input asp-for="NewUser.ConfirmPassword" />
+        </div>
 
-            <div>
-                <p asp-validation-for="NewUser.Password"></p>
-                <label asp-for="NewUser.Password"></label>
-                <input asp-for="NewUser.Password" />
-            </div>
-
-            <div>
-                <p asp-validation-for="NewUser.ConfirmPassword"></p>
-                <label asp-for="NewUser.ConfirmPassword"></label>
-                <input asp-for="NewUser.ConfirmPassword" />
-            </div>
-
-            <button type="submit">Register</button>
-        </form>
-    </section>
-</body>
-</html>
+        <button type="submit">Register</button>
+    </form>
+</section>

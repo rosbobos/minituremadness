@@ -1,18 +1,9 @@
 ﻿@page
 @model MiniatureMadness.Pages.Account.LoginModel
 @{
-    Layout = null;
+    ViewData["Title"] = "Miniature Madness | Login";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-</head>
-
-<body>
     <form method="post">
         <div asp-validation-summary="All"></div>
         <label asp-for="Input.Email"></label>
@@ -25,5 +16,3 @@
 
         <button type="submit">LOGIN</button>
     </form>
-</body>
-</html>
