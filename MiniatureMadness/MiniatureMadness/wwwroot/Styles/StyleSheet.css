@@ -1,3 +1,30 @@
 ﻿body {
-    background-color: burlywood;
+    background-image: url('Assets/canvaStaryNight.jpg');
+    background-repeat: no-repeat, repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: azure;
+    font-size: 40px;
+    font-family: 'Carrois Gothic SC', sans-serif;
+}
+header {
+    background-color: rgb(54, 48, 84, .7);
+}
+a:link {
+    color: #C1A1C3;
+    text-decoration: none;
+}
+a:visited {
+    color: #C1A1C3;
+    text-decoration: none;
+}
+a:hover {
+    color: azure;
+    text-decoration: none;
+}
+a:active {
+    color: #9EAADC;
+    text-decoration: none;
 }
