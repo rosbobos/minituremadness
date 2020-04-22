@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -72,6 +73,19 @@ namespace MiniatureMadness.Pages.Account
                 // Check if new user was successfully added to DB.
                 if (result.Succeeded)
                 {
+                    //when registration is succesful
+                    //user is not yet logged in
+                    //claims to hold user information for later use
+                    Claim name = new Claim("FullName", $"{newUser.FirstName} {newUser.LastName}");
+                    Claim email = new Claim(ClaimTypes.Email, newUser.Email, ClaimValueTypes.Email);
+                    Claim birthday = new Claim(ClaimTypes.DateOfBirth, new DateTime(newUser.Birthdate.Year, newUser.Birthdate.Month, newUser.Birthdate.Day).ToString("u"), ClaimValueTypes.DateTime);
+
+                    List<Claim> claims = new List<Claim>()
+                    {
+                        name, email, birthday
+                    };
+
+                    await _userManager.AddClaimsAsync(newUser, claims);
                     // Sign the user in and redirect to the "Home" page.
                     await _signInManager.SignInAsync(newUser, isPersistent: false);
                     return RedirectToAction("Index", "Home");
