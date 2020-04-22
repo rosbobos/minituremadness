@@ -8,6 +8,16 @@
 </head>
 
 <body>
+    <header>
+        <p>Welcome User!</p>
+        <nav>
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-page="/Account/Login">Login</a>
+            <a asp-page="/Account/Register">Register</a>
+        </nav>
+    </header>
+
     @RenderBody()
+
 </body>
 </html>
