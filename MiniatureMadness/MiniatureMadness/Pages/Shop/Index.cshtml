@@ -10,10 +10,11 @@
 @foreach (var product in Model.Products)
 {
     <div>
-        <img src="@product.Image" />
+        <a asp-page="/Shop/Product/@product.ID">
+            <img src="@product.Image" />
+        </a>
         <h2>@product.Name</h2>
         <p>@product.Price</p>
-        <p>@product.Description</p>
-
+        <a asp-page="/Shop/Product/@product.ID">View Product</a>
     </div>
 }
