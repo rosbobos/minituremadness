@@ -5,7 +5,16 @@ using System.Threading.Tasks;
 
 namespace MiniatureMadness.Models.Interfaces
 {
-    public class IInventory
+    public interface IInventory
     {
+        Task<Product> CreateAProduct(Product product);
+
+        List<Product> GetAllProducts();
+
+        Task<Product> GetAProduct(int id);
+
+        Task UpdateAProduct(int id, Product product);
+
+        Task DeleteAProduct(int id);
     }
 }
