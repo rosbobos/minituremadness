@@ -33,9 +33,10 @@ namespace MiniatureMadness.Models.Services
             return result;
         }
 
-        public Task<Product> GetAProduct(int id)
+        public async Task<Product> GetAProduct(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Products.FindAsync(id);
+            return result;
         }
 
         public Task UpdateAProduct(int id, Product product)
