@@ -13,6 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MiniatureMadness.Data;
 using MiniatureMadness.Models;
+using MiniatureMadness.Models.Interfaces;
+using MiniatureMadness.Models.Services;
 
 namespace MiniatureMadness
 {
@@ -56,6 +58,9 @@ namespace MiniatureMadness
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
+
+            // Map our Inventory Service to our IInventory interface with DI.
+            services.AddTransient<IInventory, InventoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

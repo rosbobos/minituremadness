@@ -1,0 +1,19 @@
+﻿@page
+@model MiniatureMadness.Pages.Shop.IndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<h1>Browse Our Products</h1>
+
+@foreach (var product in Model.Products)
+{
+    <div>
+        <img src="@product.Image" />
+        <h2>@product.Name</h2>
+        <p>@product.Price</p>
+        <p>@product.Description</p>
+
+    </div>
+}
