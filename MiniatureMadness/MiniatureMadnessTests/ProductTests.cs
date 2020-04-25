@@ -38,5 +38,16 @@ namespace MiniatureMadnessTests
 
             Assert.Equal(expected, product.Price);
         }
+
+        [Fact]
+        public void CanSetAndGetDescriptionOfProducts()
+        {
+            Product product = new Product();
+            product.Description = "Super Doggo is a loyal, brave, and ferocious crime fighter! He'll also fetch you the newspaper...";
+
+            string expected = "Super Doggo is a loyal, brave, and ferocious crime fighter! He'll also fetch you the newspaper...";
+
+            Assert.Equal(expected, product.Description);
+        }
     }
 }
