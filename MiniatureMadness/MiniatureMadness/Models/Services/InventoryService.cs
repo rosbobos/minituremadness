@@ -52,9 +52,9 @@ namespace MiniatureMadness.Models.Services
         /// Retrieves all products from the database.
         /// </summary>
         /// <returns>A list of all products.</returns>
-        public async Task<List<Product>> GetAllProducts()
+        public List<Product> GetAllProducts()
         {
-            var result = await _context.Products.ToListAsync();
+            var result = _context.Products.ToList();
 
             return result;
         }
