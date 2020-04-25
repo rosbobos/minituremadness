@@ -152,7 +152,7 @@ namespace MiniatureMadnessTests
         {
             // Instantiates our InMemory database with our StoreDBContext.
             DbContextOptions<StoreDBContext> options = new DbContextOptionsBuilder<StoreDBContext>()
-                .UseInMemoryDatabase("CanGetASingleProductFromDatabase")
+                .UseInMemoryDatabase("CanUpdateAProductInTheDatabase")
                 .Options;
 
             // Uses our InMemory database.
@@ -188,6 +188,70 @@ namespace MiniatureMadnessTests
                 var updatedProduct = data.Result;
 
                 Assert.Equal(expected, updatedProduct.Price);
+            }
+        }
+
+        /// <summary>
+        /// Tests that we can delete a Product from the database.
+        /// </summary>
+        [Fact]
+        public async void CanDeleteAProductFromTheDatabase()
+        {
+            // Instantiates our InMemory database with our StoreDBContext.
+            DbContextOptions<StoreDBContext> options = new DbContextOptionsBuilder<StoreDBContext>()
+                .UseInMemoryDatabase("CanDeleteAProductInTheDatabase")
+                .Options;
+
+            // Uses our InMemory database.
+            using (StoreDBContext context = new StoreDBContext(options))
+            {
+                // "Grabs" our InventoryService.
+                InventoryService service = new InventoryService(context);
+
+                // Define new Products to be inserted into the database.
+                Product product1 = new Product()
+                {
+                    Sku = "123-456",
+                    Name = "Super Doggo",
+                    Description = "Super Doggo is a loyal, brave, and ferocious crime fighter! He'll also fetch you the newspaper...",
+                    Price = 129.95M,
+                    Image = "/Assets/Images/Products/super-doggo.png"
+                };
+
+                Product product2 = new Product()
+                {
+                    Sku = "654-321",
+                    Name = "Scruffer Doggo",
+                    Description = "Super Doggo's younger cousin, Scruffer Doggo is mangy and lazy. He is often in the way...",
+                    Price = 49.95M,
+                    Image = "/Assets/Images/Products/scruffer-doggo.png"
+                };
+
+                // Inserts the Products into the database.
+                var result1 = await service.CreateAProduct(product1);
+                var result2 = await service.CreateAProduct(product2);
+
+                // Retrieve all Products from the database.
+                var data = await context.Products.ToListAsync();
+
+                // Define expected length of returned list as 2.
+                int expected = 2;
+
+                Assert.Equal(expected, data.Count);
+
+                // Grab the ID of the second Product in the database.
+                int productID = result2.ID;
+
+                // Delete the second Product from the database.
+                await service.DeleteAProduct(productID);
+
+                // Grab the updated list of all Products from the database.
+                var newData = await context.Products.ToListAsync();
+
+                // Assert that the newly returned list of Products is one less.
+                int newExpected = 1;
+
+                Assert.Equal(newExpected, newData.Count);
             }
         }
     }
