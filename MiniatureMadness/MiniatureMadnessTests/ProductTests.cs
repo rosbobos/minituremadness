@@ -49,5 +49,16 @@ namespace MiniatureMadnessTests
 
             Assert.Equal(expected, product.Description);
         }
+
+        [Fact]
+        public void CanSetAndGetImageOfProducts()
+        {
+            Product product = new Product();
+            product.Image = "/Assets/Images/Products/super-doggo.png";
+
+            string expected = "/Assets/Images/Products/super-doggo.png";
+
+            Assert.Equal(expected, product.Image);
+        }
     }
 }
