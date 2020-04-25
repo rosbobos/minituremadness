@@ -9,8 +9,8 @@ using MiniatureMadness.Data;
 namespace MiniatureMadness.Migrations.StoreDB
 {
     [DbContext(typeof(StoreDBContext))]
-    [Migration("20200425223547_initial")]
-    partial class initial
+    [Migration("20200425232346_initialStore")]
+    partial class initialStore
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,7 +69,7 @@ namespace MiniatureMadness.Migrations.StoreDB
                         {
                             ID = 3,
                             Description = "Wheather doing a gender reveal or a simple baby shower these vanilla cupcakes are topped with sweet marzipan decorations",
-                            Image = "/Assets/CanvaBabyShower.jpg",
+                            Image = "/Assets/CanvaBabyShower.png",
                             Name = "Baby Shower Special",
                             Price = 4m,
                             Sku = "984-354"
@@ -87,7 +87,7 @@ namespace MiniatureMadness.Migrations.StoreDB
                         {
                             ID = 5,
                             Description = "A new take on red velvet, this is a soft chocolate flavored cupcake colored with current and current jam is added in the frosting for a truely blissful experiance",
-                            Image = "Assets/CanvaCurrent.jpg",
+                            Image = "/Assets/CanvaCurrent.jpg",
                             Name = "Current",
                             Price = 3m,
                             Sku = "163-541"
@@ -96,7 +96,7 @@ namespace MiniatureMadness.Migrations.StoreDB
                         {
                             ID = 6,
                             Description = "These soft vanilla cupcakes are flavored with slightly tart blueberries which make them so refreshing",
-                            Image = "Assets/CanvaFourCupcakes.jpg",
+                            Image = "/Assets/CanvaFourCupcakes.jpg",
                             Name = "Blueberry bliss",
                             Price = 3m,
                             Sku = "268-198"

@@ -9,7 +9,7 @@ namespace MiniatureMadness.Models.Interfaces
     {
         Task<Product> CreateAProduct(Product product);
 
-        Task<List<Product>> GetAllProducts();
+        List<Product> GetAllProducts();
 
         Task<Product> GetAProduct(int id);
 

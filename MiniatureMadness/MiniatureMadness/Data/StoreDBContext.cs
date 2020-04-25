@@ -39,7 +39,7 @@ namespace MiniatureMadness.Data
                 Name = "Baby Shower Special",
                 Price = 4,
                 Description = "Wheather doing a gender reveal or a simple baby shower these vanilla cupcakes are topped with sweet marzipan decorations",
-                Image = "/Assets/CanvaBabyShower.jpg"
+                Image = "/Assets/CanvaBabyShower.png"
             },
             new Product
             {
@@ -57,7 +57,7 @@ namespace MiniatureMadness.Data
                 Name = "Current",
                 Price = 3,
                 Description = "A new take on red velvet, this is a soft chocolate flavored cupcake colored with current and current jam is added in the frosting for a truely blissful experiance",
-                Image = "Assets/CanvaCurrent.jpg"
+                Image = "/Assets/CanvaCurrent.jpg"
             },
             new Product
             {
@@ -66,7 +66,7 @@ namespace MiniatureMadness.Data
                 Name = "Blueberry bliss",
                 Price = 3,
                 Description = "These soft vanilla cupcakes are flavored with slightly tart blueberries which make them so refreshing",
-                Image = "Assets/CanvaFourCupcakes.jpg"
+                Image = "/Assets/CanvaFourCupcakes.jpg"
             },
             new Product
             {
