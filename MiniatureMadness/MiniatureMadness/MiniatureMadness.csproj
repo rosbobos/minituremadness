@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\Styles\Assets\canvaStaryNight.jpg" />
+    <None Include="wwwroot\Assets\canvaStaryNight.jpg" />
   </ItemGroup>
 
   <ItemGroup>
