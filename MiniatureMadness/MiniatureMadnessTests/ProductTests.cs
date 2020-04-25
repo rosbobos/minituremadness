@@ -6,6 +6,9 @@ namespace MiniatureMadnessTests
 {
     public class ProductTests
     {
+        /// <summary>
+        /// Tests that Product Sku property Get and Set work.
+        /// </summary>
         [Fact]
         public void CanSetAndGetSkuOfProducts()
         {
@@ -17,6 +20,9 @@ namespace MiniatureMadnessTests
             Assert.Equal(expected, product.Sku);
         }
 
+        /// <summary>
+        /// Tests that Product Name property Get and Set work.
+        /// </summary>
         [Fact]
         public void CanSetAndGetNameOfProducts()
         {
@@ -28,6 +34,9 @@ namespace MiniatureMadnessTests
             Assert.Equal(expected, product.Name);
         }
 
+        /// <summary>
+        /// Tests that Product Price property Get and Set work.
+        /// </summary>
         [Fact]
         public void CanSetAndGetPriceOfProducts()
         {
@@ -39,6 +48,9 @@ namespace MiniatureMadnessTests
             Assert.Equal(expected, product.Price);
         }
 
+        /// <summary>
+        /// Tests that Product Description property Get and Set work.
+        /// </summary>
         [Fact]
         public void CanSetAndGetDescriptionOfProducts()
         {
@@ -50,6 +62,9 @@ namespace MiniatureMadnessTests
             Assert.Equal(expected, product.Description);
         }
 
+        /// <summary>
+        /// Tests that Product Image property Get and Set work.
+        /// </summary>
         [Fact]
         public void CanSetAndGetImageOfProducts()
         {
