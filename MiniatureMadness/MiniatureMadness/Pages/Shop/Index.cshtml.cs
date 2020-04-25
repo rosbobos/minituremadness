@@ -21,9 +21,9 @@ namespace MiniatureMadness.Pages.Shop
             _inventory = inventory;
         }
 
-        public void OnGet()
+        public async void OnGet()
         {
-            var result = _inventory.GetAllProducts();
+            var result = await _inventory.GetAllProducts();
 
             Products = result;
         }
