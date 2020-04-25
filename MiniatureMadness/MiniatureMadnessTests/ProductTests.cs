@@ -7,7 +7,7 @@ namespace MiniatureMadnessTests
     public class ProductTests
     {
         [Fact]
-        public void CanAddSkuToProducts()
+        public void CanSetAndGetSkuOfProducts()
         {
             Product product = new Product();
             product.Sku = "155-837";
@@ -18,7 +18,7 @@ namespace MiniatureMadnessTests
         }
 
         [Fact]
-        public void CanAddNameToProducts()
+        public void CanSetAndGetNameOfProducts()
         {
             Product product = new Product();
             product.Name = "Super Doggo";
@@ -29,7 +29,7 @@ namespace MiniatureMadnessTests
         }
 
         [Fact]
-        public void CanSetAndGetPriceToProducts()
+        public void CanSetAndGetPriceOfProducts()
         {
             Product product = new Product();
             product.Price = 129.95M;
