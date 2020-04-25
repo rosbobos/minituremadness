@@ -27,5 +27,16 @@ namespace MiniatureMadnessTests
 
             Assert.Equal(expected, product.Name);
         }
+
+        [Fact]
+        public void CanSetAndGetPriceToProducts()
+        {
+            Product product = new Product();
+            product.Price = 129.95M;
+
+            decimal expected = 129.95M;
+
+            Assert.Equal(expected, product.Price);
+        }
     }
 }
