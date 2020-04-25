@@ -48,81 +48,91 @@ namespace MiniatureMadness.Migrations.StoreDB
                         new
                         {
                             ID = 1,
-                            Description = "The merc witht he mouth now in mini form",
-                            Name = "Deapool",
-                            Price = 1099m,
+                            Description = "This coffee cake inspired cupcake is light and testes of sweet almonds and oats",
+                            Image = "/Assets/CanvaAlmond.jpg",
+                            Name = "Oats & Almond",
+                            Price = 3m,
                             Sku = "153-785"
                         },
                         new
                         {
                             ID = 2,
-                            Description = "The big green guy now can fit in your hand",
-                            Name = "Hulk",
-                            Price = 1199m,
+                            Description = "Sharp clean raspberry mixes with a deep dark chocolate in this mini cupcake",
+                            Image = "/Assets/CanvaChocoCupcake.jpg",
+                            Name = "Chocolate Raspberry",
+                            Price = 2m,
                             Sku = "597-416"
                         },
                         new
                         {
                             ID = 3,
-                            Description = "He is really good at shoting arrows, thats about it",
-                            Name = "Hawk-eye",
-                            Price = 499m,
+                            Description = "Wheather doing a gender reveal or a simple baby shower these vanilla cupcakes are topped with sweet marzipan decorations",
+                            Image = "/Assets/CanvaBabyShower.jpg",
+                            Name = "Baby Shower Special",
+                            Price = 4m,
                             Sku = "984-354"
                         },
                         new
                         {
                             ID = 4,
-                            Description = "Get to the bright side and look at all those happy little trees",
-                            Name = "Bob Ross",
-                            Price = 10000m,
+                            Description = "A simple and sweet milk chocolate cupcake topped with chocolate frosting and a sprinkle of sea salt",
+                            Image = "/Assets/CanvaChocolate.jpg",
+                            Name = "Classic Chocolate",
+                            Price = 2m,
                             Sku = "358-469"
                         },
                         new
                         {
                             ID = 5,
-                            Description = "Destroy mini sized cities",
-                            Name = "Godzilla",
-                            Price = 999m,
+                            Description = "A new take on red velvet, this is a soft chocolate flavored cupcake colored with current and current jam is added in the frosting for a truely blissful experiance",
+                            Image = "Assets/CanvaCurrent.jpg",
+                            Name = "Current",
+                            Price = 3m,
                             Sku = "163-541"
                         },
                         new
                         {
                             ID = 6,
-                            Description = "Get two and they can point at eachother",
-                            Name = "Spiderman",
-                            Price = 899m,
+                            Description = "These soft vanilla cupcakes are flavored with slightly tart blueberries which make them so refreshing",
+                            Image = "Assets/CanvaFourCupcakes.jpg",
+                            Name = "Blueberry bliss",
+                            Price = 3m,
                             Sku = "268-198"
                         },
                         new
                         {
                             ID = 7,
-                            Description = "He might change into a snake since you like them, but when you pick him up he changes back and stabs you",
-                            Name = "Loki",
-                            Price = 799m,
+                            Description = "These are a mixture of sweet vanilla and strawberry. Topped with candy hearts",
+                            Image = "/Assets/CanvaHearts.jpg",
+                            Name = "Sweet heart",
+                            Price = 2m,
                             Sku = "698-164"
                         },
                         new
                         {
                             ID = 8,
-                            Description = "maybe you have heard of him",
-                            Name = "Starlord",
-                            Price = 699m,
+                            Description = "Sweet soft mint paired with deep dark chocolate",
+                            Image = "/Assets/CanvaMintchoco.jpg",
+                            Name = "Mint and chocolate",
+                            Price = 2m,
                             Sku = "354-925"
                         },
                         new
                         {
                             ID = 9,
-                            Description = "to get eyes like his you need a to find a shady doctor in a max security prison... or just buy the mini",
-                            Name = "Riddick",
-                            Price = 799m,
+                            Description = "This is made with purple sweet potatoe to add a delicate flavor that is soft and slightly sweet",
+                            Image = "/Assets/CanvaPurpleCupcake.jpg",
+                            Name = "Purple princess",
+                            Price = 3m,
                             Sku = "567-298"
                         },
                         new
                         {
                             ID = 10,
-                            Description = "Comes with everything you need! Laptop, mouse, desk, slippers and coffee.",
-                            Name = "Work at home mini set",
-                            Price = 1100m,
+                            Description = "These multi colored cupcakes come in vanilla with a touch of magic",
+                            Image = "/Assets/CanvaUnicornCupcakes.jpg",
+                            Name = "Unicorn",
+                            Price = 3m,
                             Sku = "364-975"
                         });
                 });
