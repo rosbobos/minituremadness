@@ -20,7 +20,12 @@ namespace MiniatureMadnessTests
         [Fact]
         public void CanAddNameToProducts()
         {
+            Product product = new Product();
+            product.Name = "Super Doggo";
 
+            string expected = "Super Doggo";
+
+            Assert.Equal(expected, product.Name);
         }
     }
 }
