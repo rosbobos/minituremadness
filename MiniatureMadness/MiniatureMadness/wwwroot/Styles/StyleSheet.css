@@ -1,6 +1,5 @@
 ﻿body {
     background-image: url('/Assets/canvaStaryNight.jpg');
-    background-repeat: no-repeat, repeat;
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -8,6 +7,7 @@
     color: azure;
     font-size: 40px;
     font-family: 'Carrois Gothic SC', sans-serif;
+
 }
 header {
     background-color: rgb(54, 48, 84, .7);
@@ -27,4 +27,15 @@ a:hover {
 a:active {
     color: #9EAADC;
     text-decoration: none;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(1fr, 3);
+}
+div img {
+    width: 30%;
+}
+img {
+    width: 30%;
 }
