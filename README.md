@@ -5,12 +5,13 @@
 2. [Tools Used](#tools-used)
 3. [Getting Started](#getting-started)
 4. [Visuals](#visuals)
-5. [Data Flow](#data-flow)
-6. [Model Properties](#model-properties)
-7. [Change Log](#change-log)
-8. [Authors](#authors)
+5. [Identity Claims](#identity-claims)
+6. [Authors](#authors)
 
 ## Overview
+
+#### We Are Deployed To Azure!
+[Miniature Madness](https://miniaturemadness.azurewebsites.net/)
 
 Miniature Madness is a full-stack e-commerce web application.
 
@@ -35,8 +36,10 @@ A user can select products that they wish to purchase, and add them to their Car
 
 Clone this repository to your local machine.
 
+_**Note:** GitHub link not active at this time. MiniatureMadness is currently under development on a private Azure DevOps repo. Once MiniatureMadness has been finalized and released, the repo will be copied to GitHub, where this link will be updated if necessary, and will become valid._
+
 ```
-$ git clone https://github.com/YourRepo/YourProject.git
+$ git clone https://github.com/MiniatureMadnessE-Commerce/MiniatureMadness.git
 ```
 
 Once downloaded, you can either use the dotnet CLI utilities or Visual Studio 2019 to build the web application. The solution file is located in the MiniatureMadness subdirectory at the root of the repository.
@@ -49,7 +52,8 @@ $ dotnet build
 The dotnet tools will automatically restore any NuGet dependencies. Before running the application, the provided code-first migration will need to be applied to the SQL server of your choice. This requires the Microsoft.EntityFrameworkCore.Tools NuGet package and can be run from the NuGet Package Manager Console:
 
 ```
-Update-Database
+Update-Database -Context ApplicationDbContext
+Update-Database -Context StoreDBContext
 ```
 
 Once the database has been created, the application can be run. Options for running and debugging the application using IIS Express or Kestrel are provided within Visual Studio. From the command line, the following will start an instance of the Kestrel server to host the application:
@@ -59,17 +63,31 @@ $ cd MiniatureMadness/MiniatureMadness
 $ dotnet run
 ```
 
-Unit testing is included in the` MiniatureMadness/MMTests` project using the xUnit test framework. Tests have been provided for models, view models, controllers, and utility classes for the application.
+Unit testing is included in the` MiniatureMadness/MiniatureMadnessTests` project using the xUnit test framework. Tests have been provided for models, view models, controllers, and utility classes for the application.
 
 ## Visuals
 
-## Data Flow
+## Identity Claims
 
-## Data Model
-
-## Model Properties
+MinionMadness currently makes use of three Claims within the application:
+- **FullName**: A custom claim that stores the user's FirstName and LastName properties. This claim is used to personalize the appication and greet logged in users.
+- **Email**: This claim grabs the user's email address.
+- **DateOfBirth**: This claim grabs the user's Birthdate. It is not currently being implemented, but will be in the future. We are planning on enabling birthday discounts for our users.
 
 ## Change Log
+
+**0.5** - 20200424
+- Unit tests complete and passing for Products and Inventory CRUD operations.
+- Shop Index page contains rendered links to each product page.
+- Individual Shop product pages render with product details.
+
+**0.4** - 20200423
+- User greeted on home page upon successful login.
+- Utilized Identity Claims to capture user name and birthdate.
+
+**0.3** - 20200422
+- Shop Index page complete, all products render.
+- User registration and login complete.
 
 **0.2** - 20200421
 - Initial migration complete on ApplicationDbContext.
@@ -85,8 +103,8 @@ Unit testing is included in the` MiniatureMadness/MMTests` project using the xUn
 ## Authors
 
 **Rosalyn Johnson**
-- GitHub
-- LinkedIn
+- [GitHub](https://github.com/rosbobos)
+- [LinkedIn](https://www.linkedin.com/in/rosalyn-johnson-9ab243193/)
 
 **Robert Nielsen**
 - [GitHub](https://github.com/robertjnielsen)
