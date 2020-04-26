@@ -44,14 +44,14 @@ namespace MiniatureMadness
             services.AddDbContext<ApplicationDbContext>(options => 
             {
                 // Determines which connection string to use for the Identity DB.
-                options.UseSqlServer(Configuration.GetConnectionString("IdentityDefault"));
+                options.UseSqlServer(Configuration.GetConnectionString("IdentityProductionConnection"));
             });
 
             // Registers the StoreDBContext with our app.
             services.AddDbContext<StoreDBContext>(options =>
             {
                 // Determines which connection string to use for the store DB.
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("StoreProductionConnection"));
             });
 
             // Registers the Identity service within our app.
