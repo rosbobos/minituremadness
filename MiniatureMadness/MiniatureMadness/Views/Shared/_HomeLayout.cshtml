@@ -1,13 +1,44 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using MiniatureMadness.Models
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Styles/Reset.css" />
     <link rel="stylesheet" href="~/Styles/StyleSheet.css" />
     <title>Miniature Madness</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <span>Welcome @User.Claims.First(x => x.Type == "FullName").Value!</span>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <form asp-page="/Account/Logout">
+                    <button type="submit">Logout</button>
+                </form>
+            </nav>
+        }
+        else
+        {
+            <p>Welcome!</p>
+            <nav>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-page="/Account/Login">Login</a>
+                <a asp-page="/Account/Register">Register</a>
+            </nav>
+        }
+    </header>
+    
     @RenderBody()
+
 </body>
 </html>
