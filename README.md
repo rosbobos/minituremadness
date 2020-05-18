@@ -74,6 +74,9 @@ MinionMadness currently makes use of three Claims within the application:
 - **Email**: This claim grabs the user's email address.
 - **DateOfBirth**: This claim grabs the user's Birthdate. It is not currently being implemented, but will be in the future. We are planning on enabling birthday discounts for our users.
 
+## Vulnerability report
+[vulnerability-report](https://github.com/rosbobos/minituremadness/blob/Master/vulnerability-report.md)
+
 ## Change Log
 
 **0.5** - 20200424
